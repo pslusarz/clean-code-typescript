@@ -6,3 +6,4 @@ This is the first example from the first edition of Martin Fowler's "Refactoring
 
 https://www.cs.unc.edu/~stotts/COMP204/refactor/chap1.html
 
+Check [solutions](https://github.com/pslusarz/clean-code-typescript/tree/solutions) branch. I tried to commit in small steps, so you can diff between the commits.
