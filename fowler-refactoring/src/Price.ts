@@ -16,9 +16,6 @@ export class Price {
                result += (daysRented - 2) * 1.5
             }
             break;
-         case PriceCode.NEW_RELEASE:
-            result += daysRented * 3
-            break;
          case PriceCode.CHILDRENS:
             result += 1.5
             if (daysRented > 3) {
