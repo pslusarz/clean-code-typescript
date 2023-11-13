@@ -38,6 +38,24 @@ Amount owed is 6.5
 You earned 3 frequent renter points`)
 })
 
+//note, just replicating bad html in the original
+it('html one rental of each type for one day', () => {
+    let customer = new Customer("Lucy Marathoner")
+    let childrensRental = new Rental(princessBrideTape, 1)
+    let regularRental = new Rental(dieHardTape, 1)
+    let newRental = new Rental(killersTape, 1)
+    customer.addRental(childrensRental)
+    customer.addRental(regularRental)
+    customer.addRental(newRental)
+    expect(customer.htmlStatement()).toBe(
+        `<H1>Rentals for <EM> Lucy Marathoner</EM></H1><P>
+\tPrincess Bride\t1.5<br>
+\tDie Hard\t2<br>
+\tKillers of the Flower Moon\t3<br>
+<P>You owe <EM>6.5</EM><P>
+On this rental you earned <EM> 3</EM> frequent renter points<P>`)
+})
+
 it('multi day rentals', () => {
     let customer = new Customer("Liu Long")
     let childrensRental = new Rental(princessBrideTape, 4)

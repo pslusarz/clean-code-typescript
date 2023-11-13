@@ -19,6 +19,16 @@ export class Customer extends DomainObject {
         return result
     }
 
+    htmlStatement(): string {
+        let result = `<H1>Rentals for <EM> ${this.name}</EM></H1><P>\n`
+        this.rentals.forEach((rental) => {
+            result += `\t${rental.tape.movie.name}\t${(rental.charge())}<br>\n`
+        })
+        result +=  `<P>You owe <EM>${this.charge()}</EM><P>\n`
+        result += `On this rental you earned <EM> ${this.frequentRenterPoints()}</EM> frequent renter points<P>`
+        return result
+    }
+
     charge(): number {
         return this.rentals.reduce((acc, rental) => acc + rental.charge(), 0)
     }
