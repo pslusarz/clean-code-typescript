@@ -9,13 +9,7 @@ export abstract class Price {
 
    abstract charge(daysRented : number): number
 
-   frequentRenterPoints(daysRented: number) {
-      if ((this.priceCode === PriceCode.NEW_RELEASE) && (daysRented > 1)) {
-         return 2
-      } else {
-         return 1
-      }
-   }
+   abstract frequentRenterPoints(daysRented: number): number
 
 
 }

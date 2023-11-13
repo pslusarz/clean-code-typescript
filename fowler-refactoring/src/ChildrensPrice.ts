@@ -1,4 +1,5 @@
 import {Price} from "./Price";
+import {PriceCode} from "./Movie";
 
 export class ChildrensPrice extends Price {
     charge(daysRented : number) : number {
@@ -7,6 +8,10 @@ export class ChildrensPrice extends Price {
             result += (daysRented - 3) * 1.5
         }
         return result
+    }
+
+    frequentRenterPoints(daysRented: number) {
+        return 1
     }
 
 }
