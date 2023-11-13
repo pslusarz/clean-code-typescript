@@ -15,16 +15,18 @@ export class Customer extends DomainObject {
         let frequentRenterPoints = 0
         this.rentals.forEach((rental) => {
             totalAmount += rental.charge()
-            frequentRenterPoints++
-            if ((rental.tape.movie.priceCode === PriceCode.NEW_RELEASE) && (rental.daysRented > 1)) {
-                frequentRenterPoints++
-            }
+            frequentRenterPoints += rental.frequentRenterPoints()
+
             result += `\t${rental.tape.movie.name}\t${(rental.charge())}\n`
         })
         result += `Amount owed is ${totalAmount}\n`;
         result += `You earned ${frequentRenterPoints} frequent renter points`
         return result
     }
+
+
+
+
 
 
 }
