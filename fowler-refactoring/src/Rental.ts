@@ -8,24 +8,24 @@ export class Rental extends DomainObject {
     }
 
     amountOf() {
-        let thisAmount = 0
+        let result = 0
         switch (this.tape.movie.priceCode) {
             case PriceCode.REGULAR:
-                thisAmount += 2
+                result += 2
                 if (this.daysRented > 2) {
-                    thisAmount += (this.daysRented - 2) * 1.5
+                    result += (this.daysRented - 2) * 1.5
                 }
                 break;
             case PriceCode.NEW_RELEASE:
-                thisAmount += this.daysRented * 3
+                result += this.daysRented * 3
                 break;
             case PriceCode.CHILDRENS:
-                thisAmount += 1.5
+                result += 1.5
                 if (this.daysRented > 3) {
-                    thisAmount += (this.daysRented - 3) * 1.5
+                    result += (this.daysRented - 3) * 1.5
                 }
                 break;
         }
-        return thisAmount;
+        return result;
     }
 }
