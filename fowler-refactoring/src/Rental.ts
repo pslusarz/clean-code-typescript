@@ -12,10 +12,6 @@ export class Rental extends DomainObject {
     }
 
     frequentRenterPoints() : number {
-        if ((this.tape.movie.priceCode === PriceCode.NEW_RELEASE) && (this.daysRented > 1)) {
-            return 2
-        } else {
-            return 1
-        }
+        return this.tape.movie.frequentRenterPoints(this.daysRented)
     }
 }

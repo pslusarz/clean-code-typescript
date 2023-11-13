@@ -1,11 +1,8 @@
 import {DomainObject} from "./DomainObject";
 
-export enum PriceCode {
-    CHILDRENS,
-    REGULAR,
-    NEW_RELEASE
-}
+
 export class Movie extends DomainObject {
+
     constructor(public name: string, public priceCode : PriceCode) {
         super(name)
     }
@@ -32,4 +29,20 @@ export class Movie extends DomainObject {
         return result;
     }
 
+
+    frequentRenterPoints(daysRented: number) {
+        if ((this.priceCode === PriceCode.NEW_RELEASE) && (daysRented > 1)) {
+            return 2
+        } else {
+            return 1
+        }
+    }
+
+
+}
+
+export enum PriceCode {
+    CHILDRENS,
+    REGULAR,
+    NEW_RELEASE
 }
