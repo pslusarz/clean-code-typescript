@@ -3,8 +3,7 @@ import {Price} from "./Price";
 
 
 export class Movie extends DomainObject {
-    constructor(public name: string, public priceCode: PriceCode, public price: Price) {
-
+    constructor(public name: string, public price: Price) {
         super(name)
     }
 
@@ -20,8 +19,3 @@ export class Movie extends DomainObject {
 
 }
 
-export enum PriceCode {
-    CHILDRENS,
-    REGULAR,
-    NEW_RELEASE
-}

@@ -1,5 +1,4 @@
 import {Price} from "./Price";
-import {PriceCode} from "./Movie";
 
 export class ChildrensPrice extends Price {
     charge(daysRented : number) : number {

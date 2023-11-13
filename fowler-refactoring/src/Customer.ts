@@ -1,6 +1,5 @@
 import {DomainObject} from "./DomainObject";
 import {Rental} from "./Rental";
-import {PriceCode} from "./Movie";
 
 export class Customer extends DomainObject {
     rentals: Rental[] = []

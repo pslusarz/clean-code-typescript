@@ -1,5 +1,4 @@
 import {Customer} from "../src/Customer";
-import {Movie, PriceCode} from "../src/Movie";
 import {dieHardTape, killersTape, princessBride, princessBrideTape} from "./TestingRentals";
 import {Rental} from "../src/Rental";
 
