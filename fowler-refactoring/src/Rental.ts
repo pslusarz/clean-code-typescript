@@ -7,10 +7,10 @@ export class Rental extends DomainObject {
     }
 
     charge() {
-        return this.tape.movie.charge(this.daysRented)
+        return this.tape.movie.price.charge(this.daysRented)
     }
 
     frequentRenterPoints() : number {
-        return this.tape.movie.frequentRenterPoints(this.daysRented)
+        return this.tape.movie.price.frequentRenterPoints(this.daysRented)
     }
 }
