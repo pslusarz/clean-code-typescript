@@ -7,7 +7,7 @@ export class Rental extends DomainObject {
         super();
     }
 
-    amountOf() {
+    charge() {
         let result = 0
         switch (this.tape.movie.priceCode) {
             case PriceCode.REGULAR:
